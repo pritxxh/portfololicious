@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf ./development && rm -rf ./.cache && parcel src/index.html --out-dir development -p 3000",
-    "build": "parcel build src/index.html --out-dir dist --public-url ./"
+    "build": "parcel build src/index.html --out-dir dist --public-url ./",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,5 @@
     "@babel/runtime-corejs3": "^7.10.2",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.8"
-  },
-  "dependencies": {}
+  }
 }
