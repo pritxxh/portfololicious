@@ -1,0 +1,10 @@
+name = "naturika-website"
+compatibility_date = "2024-08-16"
+
+[env.production]
+route = { pattern = "naturika.pages.dev", zone_name = "pages.dev" }
+
+[[env.production.build]]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"

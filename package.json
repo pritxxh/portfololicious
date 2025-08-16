@@ -1,12 +1,13 @@
 {
-  "name": "safarika",
+  "name": "naturika",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf ./development && rm -rf ./.cache && parcel src/index.html --out-dir development -p 3000",
     "build": "parcel build src/index.html --out-dir dist --public-url ./",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "cf-deploy": "npm run build && wrangler pages deploy dist"
   },
   "keywords": [],
   "author": "",
