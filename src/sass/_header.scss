@@ -9,6 +9,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
+        .brand-logo {
+            height: 4rem;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s ease;
+            
+            &:hover {
+                filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+            }
+        }
 
         .list {
             display: flex;
