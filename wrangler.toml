@@ -1,3 +1,11 @@
 name = "carousel"
 compatibility_date = "2024-08-16"
 pages_build_output_dir = "dist"
+
+# Custom domain configuration (update with your actual domain)
+# Uncomment and modify the line below with your domain:
+# custom_domain = "naturika.com"
+
+# Example domains (replace with your actual domain):
+# custom_domain = "naturika.com"
+# custom_domain = "www.naturika.com"
