@@ -16,6 +16,7 @@
 
         img {
             border-radius: 2rem;
+            object-fit: cover;
         }
 
         &:not(:last-child) {
@@ -23,11 +24,20 @@
         }
 
         &--left {
-
+            img {
+                width: 30.5rem;
+                height: 42rem;
+            }
         }
 
         &--right {
             margin-left: 2rem;
+            
+            > img {
+                width: 19.7rem;
+                height: 15.6rem;
+            }
+            
             article {
                 display: flex;
                 align-items: center;
@@ -36,6 +46,7 @@
                 img {
                     height: 7rem;
                     border-radius: 0;
+                    object-fit: initial;
                 }
                 
                 aside {
