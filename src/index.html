@@ -7,6 +7,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#E7AB54">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/png/favicon.png">
+	
+	<!-- Font Preloading for Instant Loading -->
+	<link rel="preload" href="./font/jelani.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" href="./font/Circular-Book.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" href="./font/Circular-Medium.woff" as="font" type="font/woff" crossorigin>
+	
+	<!-- Font Loading Optimization -->
+	<style>
+		/* Hide hero heading until font loads */
+		.hero__heading {
+			visibility: hidden;
+		}
+		
+		/* Show when font is loaded */
+		.fonts-loaded .hero__heading {
+			visibility: visible;
+		}
+		
+		/* Fallback after 3 seconds */
+		.fonts-timeout .hero__heading {
+			visibility: visible;
+		}
+	</style>
+	
 	<title>Naturika &mdash; Explore Nature's Art | Git Hook Working!</title>
 </head>
 
@@ -190,6 +214,45 @@
 		<img src="./img/svg/footer-pttrn.svg" alt="african pattern" class="footer__pattern">
 	</footer>
 
+	<!-- Font Loading Script (must be first) -->
+	<script>
+		// Font loading optimization
+		(function() {
+			// Check if fonts are already cached
+			if (sessionStorage.getItem('fontsLoaded')) {
+				document.documentElement.classList.add('fonts-loaded');
+				return;
+			}
+			
+			// Load fonts using CSS Font Loading API
+			if ('fonts' in document) {
+				Promise.all([
+					document.fonts.load('normal 400 1em jelani'),
+					document.fonts.load('normal 400 1em "Circular Book"'),
+					document.fonts.load('normal 500 1em "Circular Medium"')
+				]).then(function() {
+					document.documentElement.classList.add('fonts-loaded');
+					sessionStorage.setItem('fontsLoaded', 'true');
+				}).catch(function() {
+					// Fallback if font loading fails
+					document.documentElement.classList.add('fonts-timeout');
+				});
+			} else {
+				// Fallback for browsers without Font Loading API
+				setTimeout(function() {
+					document.documentElement.classList.add('fonts-timeout');
+				}, 3000);
+			}
+			
+			// Safety timeout
+			setTimeout(function() {
+				if (!document.documentElement.classList.contains('fonts-loaded')) {
+					document.documentElement.classList.add('fonts-timeout');
+				}
+			}, 3000);
+		})();
+	</script>
+	
 	<script src="https://cdn.jsdelivr.net/npm/horizontal-scroll@1.1.0/dist/index.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
 	<script src="./index.js"></script>

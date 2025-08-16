@@ -33,7 +33,7 @@
     src: url('../font/jelani.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 
 $primary-font: 'Circular Book', sans-serif;
