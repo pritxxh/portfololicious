@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <filter id="to-white" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="
+                0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 1 0"/>
+        </filter>
+    </defs>
+    <image x="0" y="0" width="48" height="48" preserveAspectRatio="xMidYMid meet" xlink:href="../jpg/sign.png" href="../jpg/sign.png" filter="url(#to-white)"/>
+</svg>
+
