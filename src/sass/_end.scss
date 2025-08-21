@@ -8,10 +8,18 @@
     }
 
     h4 {
-        margin-top: 5rem;
+        margin-top: 3rem;
         text-transform: uppercase;
         color: $secondary-color;
         letter-spacing: 5px;
         line-height: 2rem;
+    }
+
+    &__registered {
+        margin-top: 2rem;
+        color: $primary-color;
+        font-family: $primary-font;
+        font-size: 1.1rem;
+        letter-spacing: .5px;
     }
 }
